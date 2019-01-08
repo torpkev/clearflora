@@ -1,0 +1,9 @@
+name: ClearFauna
+main: work.torp.clearfauna.Main
+version: 1.0
+api-version: 1.13
+commands:
+   clearfauna:
+      description: Clears fauna
+      usage: /clearfauna
+      aliases: [cf]
