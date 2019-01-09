@@ -1,2 +1,8 @@
 radius: 5
 height: 3
+grass_to_dirt: true
+remove_grass: true
+remove_tall_grass: true
+remove_flowers: true
+remove_leaves: true
+remove_water_fauna: true
