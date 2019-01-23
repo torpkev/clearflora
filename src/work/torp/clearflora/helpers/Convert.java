@@ -1,10 +1,10 @@
-package work.torp.clearfauna.helpers;
+package work.torp.clearflora.helpers;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
-import work.torp.clearfauna.alerts.Alert;
+import work.torp.clearflora.alerts.Alert;
 
 public class Convert {
 	public static Material StringToMaterial(String material_name)
@@ -52,6 +52,18 @@ public class Convert {
 		catch (NumberFormatException ex) {
 			Alert.DebugLog("Convert", "IntegerFromString", "Unable to convert String to Integer - String: " + s);	
 			retVal = -1;
+		}
+		return retVal;
+	}
+	public static boolean BooleanFromString(String s)
+	{
+		boolean retVal = false;
+		try{
+			retVal = Boolean.parseBoolean(s);
+		} 
+		catch (NumberFormatException ex) {
+			Alert.DebugLog("Convert", "BooleanFromString", "Unable to convert String to Boolean - String: " + s);	
+			retVal = false;
 		}
 		return retVal;
 	}

@@ -1,4 +1,4 @@
-package work.torp.clearfauna.helpers;
+package work.torp.clearflora.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,12 +38,12 @@ public class Functions {
         List<Block> blocks = new ArrayList<Block>();
  
         World world = corner1.getWorld();
-        double minX = Math.min(corner1.getX(), corner2.getX()) - 1;
-        double minY = Math.min(corner1.getY(), corner2.getY()) - 1;
-        double minZ = Math.min(corner1.getZ(), corner2.getZ()) - 1;
-        double maxX = Math.max(corner1.getX(), corner2.getX()) + 1;
-        double maxY = Math.max(corner1.getY(), corner2.getY()) + 1;
-        double maxZ = Math.max(corner1.getZ(), corner2.getZ()) + 1;
+        double minX = Math.min(corner1.getX(), corner2.getX());
+        double minY = Math.min(corner1.getY(), corner2.getY());
+        double minZ = Math.min(corner1.getZ(), corner2.getZ());
+        double maxX = Math.max(corner1.getX(), corner2.getX());
+        double maxY = Math.max(corner1.getY(), corner2.getY());
+        double maxZ = Math.max(corner1.getZ(), corner2.getZ());
        
         for (double x = minX; x <= maxX; x++) {
             for (double y = minY; y <= maxY; y++) {
@@ -72,5 +72,9 @@ public class Functions {
             if(Character.digit(s.charAt(i),radix) < 0) return false;
         }
         return true;
+    }
+    public static boolean isBoolean(String s)
+    {
+    	return s.equalsIgnoreCase("false") || s.equalsIgnoreCase("true");
     }
 }

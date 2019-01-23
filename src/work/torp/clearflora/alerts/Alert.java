@@ -1,4 +1,4 @@
-package work.torp.clearfauna.alerts;
+package work.torp.clearflora.alerts;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,14 +12,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import work.torp.clearfauna.Main;
+import work.torp.clearflora.Main;
 
 public class Alert {
 	public static void Sender(String message, CommandSender sender, boolean includeHeader) {
 		String header = "";
 		if (includeHeader)
 		{
-			header = ChatColor.BLUE + "[Domain] ";
+			header = ChatColor.BLUE + "[Clear Flora] ";
 		}
 		if (sender != null)
 		{
@@ -32,7 +32,7 @@ public class Alert {
 		String header = "";
 		if (includeHeader)
 		{
-			header = ChatColor.BLUE + "[Domain] ";
+			header = ChatColor.BLUE + "[Clear Flora] ";
 		}
 		if (player != null)
 		{
@@ -47,7 +47,7 @@ public class Alert {
 	public static void Log(String function, String message)
 	{
 		ConsoleCommandSender clogger = Main.getInstance().getServer().getConsoleSender();
-		clogger.sendMessage(ChatColor.DARK_PURPLE + "[Domain]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
+		clogger.sendMessage(ChatColor.DARK_PURPLE + "[Clear Flora]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
 	}
 	public static void VerboseLog(String function, String message)
 	{
@@ -56,7 +56,7 @@ public class Alert {
 		{
 			if (vlog.toLowerCase() == "true") {
 				ConsoleCommandSender clogger = Main.getInstance().getServer().getConsoleSender();
-				clogger.sendMessage(ChatColor.DARK_RED + "[Domain.Verbose]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
+				clogger.sendMessage(ChatColor.DARK_RED + "[Clear Flora.Verbose]" + ChatColor.GOLD + "[" + function + "] " + ChatColor.WHITE + message);
 			}	
 		}
 	}
@@ -70,7 +70,7 @@ public class Alert {
 		{
 			if (elog.toLowerCase() == "true") {
 				ConsoleCommandSender clogger = Main.getInstance().getServer().getConsoleSender();
-				clogger.sendMessage(ChatColor.LIGHT_PURPLE + "[Domain.Debug]" + ChatColor.AQUA + "[" + function + "." + subfunction + "] " + ChatColor.WHITE + message);
+				clogger.sendMessage(ChatColor.LIGHT_PURPLE + "[Clear Flora.Debug]" + ChatColor.AQUA + "[" + function + "." + subfunction + "] " + ChatColor.WHITE + message);
 				if (Main.getInstance().getDebugFile()) {
 					Alert.LogToFile("[" + function + "." + subfunction + "] " + message);
 				}
@@ -87,7 +87,7 @@ public class Alert {
                 dataFolder.mkdir();
             }
  
-            File saveTo = new File(Main.getInstance().getDataFolder(), "domain_debug.log");
+            File saveTo = new File(Main.getInstance().getDataFolder(), "Clear_Flora_debug.log");
             if (!saveTo.exists())
             {
                 saveTo.createNewFile();

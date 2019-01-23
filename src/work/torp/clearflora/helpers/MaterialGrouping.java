@@ -1,4 +1,4 @@
-package work.torp.clearfauna.helpers;
+package work.torp.clearflora.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ public class MaterialGrouping {
 		lstRet.add(Material.SPRUCE_LEAVES);
 		return lstRet;	
 	}
-	public static List<Material> WaterFauna()
+	public static List<Material> WaterFlora()
 	{
 		List<Material> lstRet = new ArrayList<Material>();
 		lstRet.add(Material.LILY_PAD);
